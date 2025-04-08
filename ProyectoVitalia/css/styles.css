@@ -1,0 +1,527 @@
+/* Estilos generales */
+:root {
+    --color-primario: #e74c3c;
+    --color-secundario: #3498db;
+    --color-texto: #333;
+    --color-fondo: #f9f9f9;
+    --color-borde: #ddd;
+    --color-exito: #2ecc71;
+    --color-alerta: #f39c12;
+    --color-peligro: #e74c3c;
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: white;
+    box-shadow: var(--sombra);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* Contenedores principales */
+.contenedor-principal, .contenedor-formulario, .contenedor-dashboard, .contenedor-chat, .contenedor-subida {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('../assets/hero-bg.jpg');
+    background-size: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primario);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-texto);
+}
+
+/* Botones */
+.boton-primario, .boton-secundario, .boton-emergencia {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin: 0 0.5rem;
+}
+
+.boton-primario {
+    background-color: var(--color-primario);
+    color: white;
+    border: 2px solid var(--color-primario);
+}
+
+.boton-primario:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+}
+
+.boton-secundario:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.boton-emergencia {
+    background-color: var(--color-peligro);
+    color: white;
+    border: 2px solid var(--color-peligro);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+/* Tarjetas de características */
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tarjeta-caracteristica {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.tarjeta-caracteristica:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-caracteristica img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+/* Formularios */
+.formulario-autenticacion {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.formulario-autenticacion h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-primario);
+}
+
+.grupo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.grupo-formulario input, .grupo-formulario textarea, .grupo-formulario select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.grupo-formulario textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.opciones-adicionales {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.opciones-adicionales a {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+/* Dashboard */
+.contenedor-dashboard {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-usuario {
+    width: 250px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    padding: 1.5rem;
+}
+
+.perfil-usuario {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.perfil-usuario img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.menu-usuario nav ul {
+    flex-direction: column;
+}
+
+.menu-usuario nav ul li {
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.menu-usuario nav ul li a {
+    display: block;
+    padding: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.menu-usuario nav ul li a:hover, .menu-usuario nav ul li a.activo {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--color-secundario);
+}
+
+.contenido-principal {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    padding: 2rem;
+}
+
+.tarjetas-resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tarjeta-resumen {
+    background-color: var(--color-fondo);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.tarjeta-resumen h3 {
+    margin-bottom: 1rem;
+    color: var(--color-primario);
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 0.5rem;
+}
+
+.acciones-rapidas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.boton-accion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: all 0.3s;
+}
+
+.boton-accion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.boton-accion i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primario);
+}
+
+/* Chat */
+.contenedor-chat {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+}
+
+.seleccion-sintomas {
+    grid-column: 1 / -1;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.lista-sintomas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.boton-sintoma {
+    padding: 0.8rem;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.boton-sintoma:hover {
+    background-color: var(--color-secundario);
+    color: white;
+    border-color: var(--color-secundario);
+}
+
+.interfaz-chat {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.cabecera-chat {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-borde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controles-chat button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-texto);
+    margin-left: 0.5rem;
+}
+
+.mensajes-chat {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.mensaje {
+    margin-bottom: 1rem;
+    max-width: 80%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+}
+
+.mensaje.usuario {
+    margin-left: auto;
+    background-color: var(--color-secundario);
+    color: white;
+    border-top-right-radius: 0;
+}
+
+.mensaje.asistente {
+    margin-right: auto;
+    background-color: var(--color-fondo);
+    border-top-left-radius: 0;
+}
+
+.entrada-chat {
+    padding: 1rem;
+    border-top: 1px solid var(--color-borde);
+}
+
+.entrada-chat textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    resize: none;
+    margin-bottom: 0.5rem;
+}
+
+.acciones-chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.informacion-emergencia {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.consejos-rapidos {
+    margin-top: 1.5rem;
+}
+
+/* Subida de imágenes */
+.contenedor-subida {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#vista-previa {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#vista-previa img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.galeria-imagenes img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: var(--sombra);
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--color-texto);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* Modo alto contraste */
+.alto-contraste {
+    --color-fondo: #000;
+    --color-texto: #fff;
+    --color-borde: #555;
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.alto-contraste .tarjeta-caracteristica,
+.alto-contraste .formulario-autenticacion,
+.alto-contraste .menu-usuario,
+.alto-contraste .contenido-principal,
+.alto-contraste .interfaz-chat,
+.alto-contraste .informacion-emergencia {
+    background-color: #222 !important;
+    color: #fff !important;
+    border-color: #555 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-dashboard {
+        flex-direction: column;
+    }
+    
+    .menu-usuario {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .contenedor-chat {
+        grid-template-columns: 1fr;
+    }
+    
+    .informacion-emergencia {
+        margin-top: 2rem;
+    }
+}

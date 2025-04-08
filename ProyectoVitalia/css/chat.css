@@ -1,0 +1,189 @@
+/* Estilos específicos para el chat */
+.mensajes-chat {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-radius: 0 0 8px 8px;
+}
+
+.mensaje {
+    margin-bottom: 1rem;
+    max-width: 80%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 18px;
+    line-height: 1.4;
+    position: relative;
+    animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mensaje.usuario {
+    margin-left: auto;
+    background-color: #3498db;
+    color: white;
+    border-top-right-radius: 4px;
+}
+
+.mensaje.asistente {
+    margin-right: auto;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-top-left-radius: 4px;
+}
+
+.mensaje p {
+    margin: 0;
+}
+
+.mensaje .termino-medico {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.mensaje.usuario .termino-medico {
+    color: #ffdd59;
+}
+
+.escribiendo {
+    opacity: 0.7;
+}
+
+.puntos-escribiendo {
+    display: flex;
+    gap: 4px;
+}
+
+.puntos-escribiendo span {
+    width: 8px;
+    height: 8px;
+    background-color: #7f8c8d;
+    border-radius: 50%;
+    display: inline-block;
+    animation: puntos-animacion 1.4s infinite ease-in-out;
+}
+
+.puntos-escribiendo span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.puntos-escribiendo span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.puntos-escribiendo span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes puntos-animacion {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+}
+
+.entrada-chat {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.entrada-chat textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    resize: none;
+    min-height: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.entrada-chat textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.acciones-chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.acciones-chat button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.acciones-chat button:hover {
+    background-color: #f0f0f0;
+    color: #3498db;
+}
+
+#enviar-mensaje {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#enviar-mensaje:hover {
+    background-color: #2980b9;
+}
+
+#activar-voz.activo {
+    color: #e74c3c;
+    animation: pulsacion-voz 1.5s infinite;
+}
+
+@keyframes pulsacion-voz {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+/* Modo alto contraste */
+.alto-contraste .mensajes-chat {
+    background-color: #222;
+}
+
+.alto-contraste .mensaje.asistente {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+
+.alto-contraste .mensaje.usuario {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.alto-contraste .entrada-chat {
+    background-color: #333;
+    border-color: #555;
+}
+
+.alto-contraste .entrada-chat textarea {
+    background-color: #222;
+    color: #fff;
+    border-color: #555;
+}
+
+.alto-contraste .termino-medico {
+    color: #ff9999 !important;
+}
